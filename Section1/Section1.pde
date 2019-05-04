@@ -59,8 +59,10 @@ class Visualizer {
   void drawBar(int pos,int total,float val){
     float barWidths = 400 / total;
     float barX = x + barWidths * pos;
-    if(val > 0) fill(0,255,0);
-    else        fill(255,0,0);
+    if(val > 50)       fill(0,255,0);
+    else if(val > 0)   fill(255,255,0);
+    else if(val > -50) fill(255,128,0);
+    else               fill(255,0,0);
     rect(barX,y+100,barWidths,-1*val);
   }
   void update() {
