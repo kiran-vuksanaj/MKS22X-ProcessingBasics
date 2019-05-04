@@ -63,10 +63,8 @@ class Visualizer {
     //transition to yellow @75-25, pure yellow @25-0
     //switch to orange, pure orange @0 to -25
     //transition to red, pure red @-75 to -100
-    if(val > 50)       fill(0,255,0);
-    else if(val > 0)   fill(255,255,0);
-    else if(val > -50) fill(255,128,0);
-    else               fill(255,0,0);
+    if(val > 0)  fill((255-val/100*255),255,0); //transition green-yellow
+    else         fill(255,(128+val/100*128),0); //transition orange-red
     rect(barX,y+100,barWidths,-1*val);
   }
   void update() {
