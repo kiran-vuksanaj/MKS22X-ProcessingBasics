@@ -59,6 +59,10 @@ class Visualizer {
   void drawBar(int pos,int total,float val){
     float barWidths = 400 / total;
     float barX = x + barWidths * pos;
+    //pure green @100 - 75
+    //transition to yellow @75-25, pure yellow @25-0
+    //switch to orange, pure orange @0 to -25
+    //transition to red, pure red @-75 to -100
     if(val > 50)       fill(0,255,0);
     else if(val > 0)   fill(255,255,0);
     else if(val > -50) fill(255,128,0);
